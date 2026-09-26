@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://brc37kvwmjnp5"]
+
+[ext_resource type="Texture2D" uid="uid://bvi0nafqen13e" path="res://assets/WhatsApp Image 2026-09-17 at 12.59.22.jpeg" id="1_wj2rd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r3ft6"]
+texture = ExtResource("1_wj2rd")
+9:29/animation_columns = 4
+9:29/0 = 0
+10:29/animation_columns = 4
+10:29/animation_frame_0/duration = 1.0
+10:29/animation_frame_1/duration = 1.0
+10:29/0 = 0
+10:30/animation_columns = 4
+10:30/animation_frame_0/duration = 1.0
+10:30/animation_frame_1/duration = 1.0
+10:30/0 = 0
+9:30/animation_columns = 4
+9:30/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_r3ft6")

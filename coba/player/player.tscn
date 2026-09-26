@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cw3owbl3mm58a"]
+
+[ext_resource type="Texture2D" uid="uid://b0avux2tt8urh" path="res://assets/depan.png" id="1_yw30f"]
+[ext_resource type="Texture2D" uid="uid://cc6lr5argfld" path="res://assets/samping kiri.png" id="2_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://byhandxusnrbi" path="res://assets/samping kanan.png" id="3_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://3kfmw25trchw" path="res://assets/belakang.png" id="4_boad6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ulpig"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61nrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yw30f")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qjkh3")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g6k8r")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_boad6")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1981607675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1694981434]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_ulpig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=718364592]
+position = Vector2(25.99997, -48)
+scale = Vector2(1, 0.975)
+sprite_frames = SubResource("SpriteFrames_61nrk")
+animation = &"idle_up"
+offset = Vector2(-25.99997, -18.46154)
