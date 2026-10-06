@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://cw3owbl3mm58a"]
 
+[ext_resource type="Script" uid="uid://bqguu401fenlo" path="res://player/player_movement.gd" id="1_yllr7"]
 [ext_resource type="Texture2D" uid="uid://b0avux2tt8urh" path="res://assets/depan.png" id="1_yw30f"]
 [ext_resource type="Texture2D" uid="uid://cc6lr5argfld" path="res://assets/samping kiri.png" id="2_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://byhandxusnrbi" path="res://assets/samping kanan.png" id="3_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://3kfmw25trchw" path="res://assets/belakang.png" id="4_boad6"]
+[ext_resource type="Texture2D" uid="uid://b5thwwj2q3di5" path="res://assets/5.png" id="5_ebec5"]
+[ext_resource type="Texture2D" uid="uid://crt0en41nik6s" path="res://assets/6.png" id="6_yllr7"]
+[ext_resource type="Texture2D" uid="uid://bxau55tfq4ne0" path="res://assets/7.png" id="7_kb6p2"]
+[ext_resource type="Texture2D" uid="uid://db7goj2wtq0tt" path="res://assets/11.png" id="8_wodsf"]
+[ext_resource type="Texture2D" uid="uid://cqnqdtr4ecem0" path="res://assets/8.png" id="9_32hag"]
+[ext_resource type="Texture2D" uid="uid://blgtnpbqyba3v" path="res://assets/9.png" id="10_tqiix"]
+[ext_resource type="Texture2D" uid="uid://d0hgs6y516mhd" path="res://assets/10.png" id="11_e7oew"]
+[ext_resource type="Texture2D" uid="uid://dqj8t612r2wg1" path="res://assets/12.png" id="12_c35mf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ulpig"]
 
@@ -40,17 +49,61 @@ animations = [{
 "loop": 1,
 "name": &"idle_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g6k8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ebec5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yllr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kb6p2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_32hag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g6k8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tqiix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e7oew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wodsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_c35mf")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 4.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1981607675]
+script = ExtResource("1_yllr7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1694981434]
+visible = false
 position = Vector2(0, -15)
+scale = Vector2(100, 100)
 shape = SubResource("CapsuleShape2D_ulpig")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=718364592]
+unique_name_in_owner = true
 position = Vector2(25.99997, -48)
 scale = Vector2(1, 0.975)
 sprite_frames = SubResource("SpriteFrames_61nrk")
-animation = &"idle_up"
+animation = &"walk"
+frame_progress = 0.65473855
 offset = Vector2(-25.99997, -18.46154)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1247377788]
+visible = false
+zoom = Vector2(0.03, 0.03)
